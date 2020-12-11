@@ -1,0 +1,12 @@
+{
+  "name": "advent_of_code_2020",
+  "version": "1.0.0",
+  "description": "Following along https://adventofcode.com/2020",
+  "type": "module",
+  "dependencies": {
+    "@types/node": "^14.14.12"
+  },
+  "devDependencies": {},
+  "author": "Ameen Sayegh",
+  "license": "UNLICENSED"
+}
