@@ -16,17 +16,11 @@ function parse_operand(e)
   let r = null;
   if(e[0] == '(')
   {
-    e.shift();
-    r = parser(e);
-    e.shift();
+    e.shift(); r = parser(e); e.shift();
   }
   else if(e[0].match(/[0-9]+/))
   {
     r = parseInt(e.shift());
-  }
-  else
-  {
-    throw new Error(`${e[0]}`);
   }
   return r;
 }
@@ -54,8 +48,7 @@ function parse_add(e)
   let r = parse_operand(e);
   while(e[0] == '+')
   {
-    e.shift();
-    r = r + parse_operand(e);
+    e.shift(); r = r + parse_operand(e);
   }
   return r;
 }
@@ -64,8 +57,7 @@ function parse_expr2(e)
   let r = parse_add(e);
   while(e[0] == '*')
   {
-    e.shift();
-    r = r * parse_add(e);
+    e.shift(); r = r * parse_add(e);
   }
   return r;
 }
